@@ -2,15 +2,11 @@ body {
   background-color: #51835C;
 }
 .wrapper {
-  width: auto;
-  height: 600px;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
-/*Трапеция*/
+/*Трапеция, нижняя половина лица*/
 .face {
-  display: block;
   width: 400px;
   height: 0px;
   position: absolute;
@@ -18,12 +14,14 @@ body {
   border-bottom: 250px solid #92806B;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
+  /*box-shadow: 0 0 15px #555; раскомментировать тут,
+  и закомментировать строку #42, чтобы увидеть проблему с тенью*/
 }
-/*Шапка*/
+/*Шапка, верхняя половина лица. 
+И маска для тени которая повторяет форму головы*/
 .face::before,
 .face::after {
   content: '';
-  display: block;
   width: 380px;
   height: 200px;
   position: absolute;
@@ -32,18 +30,22 @@ body {
   border-radius: 120px 120px 0 0;
   background-color: #92806B;
 }
-/*Немного кривая фигура с шапкой, но без трапеции, 
-на которую легко натянуть тень*/
+/*Маска в размер головы с немного неправильной формой, 
+задвинута на задний план, чтобы создать эффект 
+тени на трапеции и шапке*/
 .face::after{
-  z-index: -100;
-  height: 330px;
+  z-index: -1;
+  height: 380px;
   top: -150px;
-  background-color: transparent;
-  box-shadow: 0 0 50px gray;
+  left: 0;
+  box-shadow: 0 0 15px #555;
 }
 .eye::before,
 .eye::after {
-  content: '-'; /*Это зрачок символом дефиса*/
+  content: '-'; /*Это зрачок, для разнообразия 
+  выполненный символом дефиса. Как корректно 
+  комментировать конкретную строку, когда 
+  текст комментария такой длинный?*/
   font-size: 40px;
   text-align: right;
   line-height: 10px;
@@ -52,27 +54,55 @@ body {
   width: 40px;
   height: 30px;
   position: absolute;
+  top: -50px;
   background-color: #010000;
   border-radius: 50%;
 }
 .eye::before {
-  top: -50px;
-  left: 100px;
+  left: 90px;
 }
 .eye::after {
-  top: -50px;
-  left: 250px;
+  left: 265px;
 }
-
-.facefront {
-  width: 150px;
-  height: 200px;
+/*Подложка носа*/
+.nose {
+  width: 170px;
+  height: 220px;
   position: absolute;
-  top: 30%;
-  left: 30%;
+  top: -50px;
+  left: calc(50% - 85px); /*Такая форма записи коректна?*/
   background-color: #E2E2B6;
-  border-radius: 50%;
+  border-top-left-radius: 70px 100px;
+  border-top-right-radius: 70px 100px;
+  border-bottom-right-radius: 50px 50px;
+  border-bottom-left-radius: 50px 50px;
+  box-shadow: 0 0 10px #555;
 }
+.nose::before,
+.nose::after {
+  content: '';
+  position: absolute;
+}
+/*Сам нос*/
+.nose::after {
+  width: 100px;
+  height: 80px;
+  top: 30px;
+  left: calc(50% - 50px);
+  background-color: #010000;
+  border-radius: 40px / 30px;
+}
+/*Декор носа*/
+.nose::before {
+  width: 20px;
+  height: 8px;
+  top: 50px;
+  left: 55%;
+  background-color: #fff;
+  border-radius: 2px;
+  z-index: 1; 
+}
+/*Левое ухо*/
 .ear::before,
 .ear::after {
   content: '';
@@ -84,20 +114,59 @@ body {
   background-color: #E2E2B6;
   border: 50px solid #92806B;
   border-radius: 50%;
-  box-shadow: 0 0 30px #666;
+  box-shadow: 0 0 15px #555;
   z-index: -1;
 }
+/*Правое ухо*/
 .ear::after {
   top: -240px;
   left: 280px;
 }
-
+/*Центральная часть рта*/
 .mouth {
-  width: 30px;
-  height: 60px;
+  width: 12px;
+  height: 50px;
   position: absolute;
-  top: 60%;
-  left: 50%;
+  top: 50px;
+  left: calc(50% - 6px);
   background-color: #010000;
   z-index: 1;
 }
+/*Боковые части рта. Каждая часть - это половина 
+border от квадрата с радиусом 50% и поворотом до 
+горизонтального уровня */
+.mouth::before,
+.mouth::after {
+  content: '';
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  border: 11px solid #010000;
+  border-radius: 50%;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  transform: rotate(-45deg);
+}
+
+.mouth::before{
+  left: 0;
+}
+.mouth::after{
+  left: -70px;
+}
+/*Полоски на лбу без псевдоэлементов, 
+тут проще добавить копий тенями*/
+.forehead {
+  width: 6px;
+  height: 30px;
+  border-radius: 30%;
+  background-color: #E2E2B6;
+  transform: rotate(20deg);
+  display: inline-block;
+  position: relative;
+  top: -120px;
+  left: 52%;
+  box-shadow: -20px 7px  0 0 #E2E2B6,
+              -40px 14px 0 0 #E2E2B6;
+}
+
