@@ -17,13 +17,13 @@
 }
 /*Ниже идут слова, которые будут сменяться. Они спрятаны в div для использования псевдокласса*/
 .animation__words span:nth-child(2) { 
-    animation-delay: 3s; 
+    animation-delay: 1s; 
 }
 .animation__words span:nth-child(3) { 
-    animation-delay: 6s; 
+    animation-delay: 2s; 
 }
 .animation__words span:nth-child(4) { 
-    animation-delay: 9s; 
+    animation-delay: 3s; 
 }
 .animation__words {
   display: inline-block;
@@ -35,32 +35,12 @@
   left: 41%;
   opacity: 0;
   overflow: hidden;
-  animation: homeWorkWordsAnimate 12s linear infinite 0s;
+  animation: homeWorkWordsAnimate 4s linear infinite 0s;
 }
-/*Анимацию можно сделать через transition*/
 @keyframes homeWorkWordsAnimate {
-    0% { opacity: 0; transform: translateY(60px)}
-    1% { opacity: 1; }
-    6% { opacity: 1; transform: translateY(0px);}
-    20%{ opacity: 1; transform: translateY(0px); }
-    24% { opacity: 1; transform: translateY(-60px); }
-    25% { opacity: 0;}
-    100% { opacity: 0; }
-}
-/*Ну а тут костыли для повторения эффектов из задания*/
-.kostyl1 {
-  width: 300px;
-  height: 60px;
-  background-color: #F39C11;
-  position: absolute;
-  top: calc(50% - 3rem);
-  left: 40%;
-}
-.kostyl2 {
-  width: 300px;
-  height: 60px;
-  background-color: #F39C11;
-  position: absolute;
-  top: calc(50% + 2rem);
-  left: 40%;
+    0% { opacity: 0; transform: translateY(30px)}
+    1% { opacity: 1; transform: translateY(0px);}
+    23% {opacity: 1;}
+    24% {opacity: 0; transform: translateY(0px)}
+    25% {opacity: 0; transform: translateY(-30px);}
 }
