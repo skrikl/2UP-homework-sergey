@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 860px;
+  height: 880px;
+  background-color: #aaa;
+}
+.item {
+  width: 400px;
+  background-color: lime;
+  margin: 10px; 
+}
+.item_small {
+  height: 200px;
+}
+.item_big {
+  height: 420px;
+}
