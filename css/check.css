@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*Создали рамку с размером. Флексами в нее установили все радиобаттоны 
+  по центру*/
+.container {
+  position: relative; 
+  display: flex;  
+  justify-content: center;  
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 50px;
+}
+/*Радиобаттоны отняли у меня два часа жизни и мешали расположению селек-
+  тора на последнем этапе при изменении масштаба, так что их уберем*/
+.radioButton {
+  display: none;
+}
+/*Создали спрайт фона*/
+.backgroundSprite {
+  position: absolute;
+  display: block;
+  width: 1200px;
+  height: 400px;
+  background-image: 
+      linear-gradient(to right, purple 0%, purple 33.33%, 
+                                green 33.33%, green 66.67%, 
+                                blue 66.67%, blue 100%);
+}
+/*Для каждого лейбла после радиобаттона задали форму кружка относительно 
+  позиции радиобаттона. */
+.radioButton + label {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  border: 2px solid lime;
+  border-radius: 50%;
+  z-index: 1;
+}
+/*Независимый селектор будет показывать выбранную кнопку*/
+.selector {
+  position: absolute;
+  top: 180px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0;
+}
+/*После клика на лейбл, спрайт двигается*/
+#option1:checked ~ .backgroundSprite
+ {   
+  left: 0;
+  transition-duration: 0.6s;
+}
+/*Селектор делает то же самое. Через opacity боремся с пропаданием 
+  селектора в положении 2*/
+#option1:checked ~ .selector {
+  transition-duration: 0.6s;
+  opacity: 1;
+  left: 115px;
+}
+#option2:checked ~ .backgroundSprite {  
+  left: -400px;
+  transition-duration: 0.6s;
+}
+#option2:checked ~ .selector {
+  transition-duration: 0.6s;
+  opacity: 1;
+  left: 175px;
+}
+#option3:checked ~ .backgroundSprite {  
+  left: -800px;
+  transition-duration: 0.6s;
+}
+#option3:checked ~ .selector {
+  transition-duration: 0.6s;
+  opacity: 1;
+  left: 235px;
+}

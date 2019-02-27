@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+}
+body {
+  background: #ccc;
+}
+.container {
+  position: relative;
+  width: 95%;
+  margin: 20px auto;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.block_left, .block_right {
+  position: absolute;
+  overflow: hidden;
+  width: 60%;
+  height: inherit;
+}
+.block_left {
+  left: 0;
+  transform: skew(-15deg) translate(-15%);
+}
+.block_right {
+  right: 0;
+  transform: skew(-15deg) translate(15%);
+  border-left: 5px solid #FFFAFF;
+}
+.img_left, .img_right {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.img_left {
+  transform: skew(15deg) translateX(15%);
+}
+.img_right {
+  transform: skew(15deg) translateX(-15%);
+}
+.block_left::before,
+.block_right::before {
+  transform: skew(15deg);
+  width: 300px;
+  height: 2em;
+  font-size: 2em;
+  line-height: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  background-color: rgba(255,255,255,0.8);
+  z-index: 1;
+}
+.block_left::before {
+  content: "Summer";
+  right: 0%;
+  border-radius: 0.5em 0 0 0.5em;
+}
+.block_right::before {
+  content: "Winter";
+  left: -5%;
+  border-radius: 0 0.5em 0.5em 0;
+}
