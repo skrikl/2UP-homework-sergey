@@ -1,0 +1,42 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__mainHeader {
+  color: #fcdb00;
+}
+.footer__subHeader {
+  color: #898989;
+}
+.footer__subheader_bottomPadding {
+  padding-bottom: 17px;
+}
+.footer__search-form {
+  text-align: center;
+  padding-bottom: 118px;
+}
+.input {
+  padding: 20px;
+  width: 725px;
+  font-family: inherit;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+.footer__item {
+  list-style: none;
+}
+.footer__link {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+.footer__text {
+  margin-top: 19px;
+}
+.footer__textContacts {
+  margin: 6px 0 0;
+}
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}

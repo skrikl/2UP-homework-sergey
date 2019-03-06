@@ -1,0 +1,116 @@
+.slider {
+  position: relative;
+  height: 715px;
+  overflow: hidden;
+}
+.tiles {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-around;
+  justify-content: space-around;
+  height: 620px;
+}
+.slider__input {
+  display: none;
+}
+.slider-controls {
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.slider-controls label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 3px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+.slider__slide {
+  overflow: hidden;
+}
+.slider__list {
+  display: flex;
+  width: 300%;
+  transition: transform 1s ease;
+}
+.slider__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 550px;
+}
+.slider__mainHeader {
+  font-size: 60px;
+  text-align: center;
+  line-height: 0;
+  margin-top: 138px;
+}
+.slider__secondaryHeader {
+  text-align: center;
+  margin: 0 5%;
+  font-size: 25px;
+}
+.slider__iconsBar {
+  display: flex;
+  position: relative;
+  list-style: none;
+  margin: 44px;
+  width: 332px;
+  justify-content: space-between;
+}
+.slider__iconsBarItem {
+  padding: 20px 24px;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+#slide_1:checked ~ .slider-controls label[for="slide_1"],
+#slide_2:checked ~ .slider-controls label[for="slide_2"],
+#slide_3:checked ~ .slider-controls label[for="slide_3"] {
+  background-color: #ffffff;
+}
+#slide_1:checked ~ .slider__slide .slider__list {
+  transform: translate(0);
+}
+#slide_2:checked ~ .slider__slide .slider__list {
+  transform: translate(-33.33%);
+}
+#slide_3:checked ~ .slider__slide .slider__list {
+  transform: translate(-66.66%);
+}
+.tiles__item {
+  width: 260px;
+}
+.tiles__image {
+  width: 400px;
+  height: 600px;
+}
+.tiles__header {
+  font-size: 27px;
+  font-weight: 700;
+  display: block;
+}
+.tiles__text {
+  color: #898989;
+}
+.header_main {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0 0 20px 0;
+  white-space: nowrap;
+  text-align: center;
+}
+.header_secondary {
+  font-size: 25px;
+  line-height: 28px;
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+}
