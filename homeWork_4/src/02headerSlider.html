@@ -1,0 +1,113 @@
+<!-- Header -->
+  <div class="wrapper wrapper_theme_primary">
+    <div class="container 
+                container_verticalPadding_medium
+                container_topPadding_40px">
+      <nav class="header">
+        <div class="menu 
+                    menu_width_large
+                    moveElement_up_10px">
+          <i class="menu__icon moveElement_down_10px
+                    fas fa-bars
+                    fa-lg 
+                    cursorStyle_pointer
+                    menu__clickHandler"></i>
+
+          <ul class="menu__linksList menu__clickHandler_disableable">
+            <li class="menu__item">
+              <a class="menu__link" href="#">First item</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Second item</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Third item</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Fourth item</a>
+            </li>
+            <li class="menu__item">
+              <a class="menu__link" href="#">Fifth item</a>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="logo">
+          <img class="logo__image" src="img/fingerprint.png" alt="Tinyone logo"> 
+          <a href="#" class="logo-text">tinyone</a>
+        </div>
+        
+        
+        <ul class="socialIconsBar moveElement_down_20px">
+          <i class="socialIconsBar__element
+                    fab fa-facebook-square 
+                    fa-lg cursorStyle_pointer"></i>
+          <i class="socialIconsBar__element
+                    fab fa-twitter-square 
+                    fa-lg cursorStyle_pointer"></i>
+          <i class="socialIconsBar__element
+                    fab fa-google-plus-square
+                    fa-lg cursorStyle_pointer"></i>
+          <i class="socialIconsBar__element
+                    fab fa-pinterest-square
+                    fa-lg cursorStyle_pointer"></i>
+        </ul> 
+      </nav>
+    </div>
+  
+<!-- Cлайдер -->
+      <!-- Position reltive -->
+      <div class="container">
+      <section class="slider">
+        <!-- Слайдер инпут прячет кнопки -->
+        <input class="slider__input" type="radio" id="slide_1" name="toggle" checked>
+        <input class="slider__input" type="radio" id="slide_2" name="toggle">
+        <input class="slider__input" type="radio" id="slide_3" name="toggle">
+        <!-- Тут дикое расположение -->
+        <!-- А потом отдельным селектором скругление кнопок -->
+        <div class="slider-controls">
+          <label for="slide_1"></label>
+          <label for="slide_2"></label>
+          <label for="slide_3"></label>
+        </div>
+        <!-- Тут просто оверфлоу прячем -->
+        <div class="slider__slide">
+          <!-- Это подложка со всеми тремя слайдами -->
+          <div class="slider__list">
+            
+            <!-- Айтем это флекс контейнер и он же задет размеры слайда -->
+            <div  class="slider__item">
+              <!-- Дальше обертка для текста -->
+                <h3 class="slider__mainHeader">Inspire your inspiration</h3>
+                <p class="slider__secondaryHeader">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis.</p>
+              <ul class="slider__iconsBar">
+                <li class="slider__iconsBarItem"><i class="fab fa-apple fa-2x"></i></li>
+                <li class="slider__iconsBarItem"><i class="fab fa-android fa-2x"></i></li>
+                <li class="slider__iconsBarItem"><i class="fab fa-windows fa-2x"></i></li>
+              </ul>
+            </div>
+            <!-- Новый слайд -->
+            <div class="slider__item">
+                <h3 class="slider__mainHeader">Inspire your inspiration twice as hard</h3>
+                <p class="slider__secondaryHeader">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis.</p>
+              <ul class="slider__iconsBar">
+                <li class=""><i class="fab fa-apple fa-2x slider__iconsBarItem"></i></li>
+                <li class=""><i class="fab fa-android fa-2x slider__iconsBarItem"></i></li>
+                <li class=""><i class="fab fa-windows fa-2x slider__iconsBarItem"></i></li>
+              </ul>
+            </div>
+            <!-- Новый слайд -->
+            <div class="slider__item">
+                <h3 class="slider__mainHeader">And now three times as hard!</h3>
+                <p class="slider__secondaryHeader">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. Donec rutrum sed sem quis venenatis.</p>
+              <ul class="slider__iconsBar">
+                <li><i class="fab fa-apple fa-2x slider__iconsBarItem"></i></li>
+                <li><i class="fab fa-android fa-2x slider__iconsBarItem"></i></li>
+                <li><i class="fab fa-windows fa-2x slider__iconsBarItem"></i></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div> <!-- header and slider wrapper -->
