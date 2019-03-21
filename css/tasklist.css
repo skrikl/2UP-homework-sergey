@@ -1,0 +1,97 @@
+/*Фон основной рабочей зоны*/
+.tasklist__wrapper {
+  width: 24em;
+  height: 24em;
+  margin: 5em auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to top right, #F8A133, #FCC52F);
+}
+/*Основная рабочая зона*/
+.tasklist__mainContainer {
+  width: 12em;
+  height: 18em;
+  background-color: white;
+  border-radius: 0.2em;
+  padding: 1em;
+  padding-left: 3em;
+  padding-right: 3em;
+  box-shadow: 0 0 1em gray;
+}
+/*Блок с датой*/
+.tasklist__date {
+  padding: 1em 0;
+  border-bottom: 2px solid #ccc;
+  font-family: sans-serif;
+  font-size: 1em;
+  color: gray;
+  text-align: center;
+}
+.tasklist__date_dayOfWeek {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+/*Воздух между элементами списка*/
+.tasklist__task {
+  position: relative;
+  padding-bottom: 1.5em;
+}
+/*Отступ перед первым пунктом списка*/
+.tasklist__mainContainer .tasklist__task:nth-child(2) {
+  padding-top: 2em;
+}
+/*Стандартное отображение чекбокса скрыто*/
+.tasklist__task input[type="checkbox"] {
+  display: none;
+}
+/*Галочка воссозданного чекбокса*/
+.tasklist__task_checkIcon {
+  position: absolute;
+  margin-top: 0.1em;
+  right: 0.1em;
+  stroke: #C8D4D9;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-dasharray: 30 30;
+  stroke-dashoffset: 30;
+  transition: all;
+  transition-delay: 0.25s;
+  transition-duration: 0.5s;
+}
+/*Текст заданий*/
+.tasklist__task_text {
+  position: relative;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 1em;
+  color: gray;
+}
+/*Это воссозданный чекбокс для галочек*/
+.tasklist__task_text::before {
+  content: "";
+  position: absolute;
+  top: -0.1em;
+  left: 10.8em;
+  width: 1em;
+  height: 1em;
+  border-radius: 40%;
+  border: 1px solid gray;
+  opacity: 1;
+  transition: all, opacity;
+  transition-delay: 0, 0.5s;
+  transition-duration: 1s, 0.8s;
+}
+/*Эффект для воссозданного чекбокса при клике*/
+.tasklist__task input:checked ~ .tasklist__task_text::before {
+  transform: scale(1.5);
+  opacity: 0;
+}
+/*Отрисовка галочки*/
+.tasklist__task input:checked ~ .tasklist__task_checkIcon {
+  stroke-dashoffset: 60;
+}
+/*Выделение отмеченного пункта списка*/
+.tasklist__task input:checked ~ .tasklist__task_text {
+    color: #bbb;
+}

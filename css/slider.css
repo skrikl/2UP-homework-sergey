@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: auto;
+  height: 100vh;
+  --main-color: #34495e;
+  --secondary-color: #e67f22;
+  color: white;
+  font-size: 2em;
+  font-family: sans-serif;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: inherit;
+  height: inherit;
+  background-color: #ccc;
+}
+.container {
+  display: flex;
+  width: 400px;
+  height: 400px;
+}
+.slide {
+  height: 100%;
+  flex: 1 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slideText {
+  text-transform: uppercase;
+  height: 50px;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  transition: all 1s ease;
+}
+/*Вот эту кучу повторяющихся стилей ниже можно 
+  как-то поизящнее записать? Если тут будет не 
+  4 слайдера а 44, то как быть?*/
+.slide1 {
+  background-color: var(--main-color);
+  transition: flex-grow 1.5s ease-out;
+}
+.slide1:hover {
+  background-color: var(--main-color);
+  flex-grow: 4;
+}
+.slide1:hover > .slideText {
+  opacity: 1;
+  z-index: 1;
+}
+.slide2 {
+  background-color: var(--secondary-color);
+  transition: all 1s ease-out;
+}
+.slide2:hover {
+  background-color: var(--secondary-color);
+  flex-grow: 4;
+}
+.slide2:hover > .slideText {
+  opacity: 1;
+  z-index: 1;
+}
+.slide3 {
+  background-color: var(--main-color);
+  transition: all 1s ease-out;
+}
+.slide3:hover {
+  background-color: var(--main-color);
+  flex-grow: 4;
+}
+.slide3:hover > .slideText {
+  opacity: 1;
+  z-index: 1;
+}
+.slide4 {
+  background-color: var(--secondary-color);
+  transition: all 1s ease-out;
+}
+.slide4:hover {
+  background-color: var(--secondary-color);
+  flex-grow: 4;
+}
+.slide4:hover > .slideText {
+  opacity: 1;
+  z-index: 1;
+}
